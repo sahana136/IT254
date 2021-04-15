@@ -5,7 +5,7 @@
 .message-list__header {
     background-color: #26283b;
     text-align: center;
-    padding-bottom: 1%;
+    padding-bottom: 0.5%;
     position: relative;
     display: none;
     color: #edf1f4;
@@ -22,7 +22,10 @@
 .message-list__content {
     list-style: none;
     background-color: #edf1f4;
-    padding: 1%;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
     display: none;
     margin: 0%;
 }

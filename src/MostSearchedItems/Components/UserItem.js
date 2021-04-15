@@ -17,6 +17,8 @@ const UserItem = props => {
                 <h2>{props.name}</h2>
                 <h3>
                   File Here
+                  <br />
+                  Branch: {props.dept}
                 </h3>
               </div>
             </Link>

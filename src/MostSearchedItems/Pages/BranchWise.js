@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 import UserList from '../Components/UserList';
 
-const Files = props => {
+const BranchWise = () => {
     const USERS = [
         {
           id: 'f1',
@@ -48,7 +48,7 @@ const Files = props => {
         }
       ];
 
-      return <UserList items={USERS} />;
-};
+      return <UserList items={USERS.filter(user => user.dept === "IT")} />;
+}
 
-export default Files;
+export default BranchWise
