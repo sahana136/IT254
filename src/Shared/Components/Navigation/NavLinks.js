@@ -15,13 +15,13 @@ const NavLinks = props => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/upload" exact>
-                    Upload
+                <NavLink to="/about" exact>
+                    About
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/about" exact>
-                    About
+                <NavLink to="/upload" exact>
+                    Upload
                 </NavLink>
             </li>
             {!auth.isLoggedIn && (
@@ -38,6 +38,13 @@ const NavLinks = props => {
                     </NavLink>
                 </li>
             )}
+            {/* {auth.isLoggedIn && (
+                <li>
+                    <NavLink to="/upload" exact>
+                        Upload
+                    </NavLink>
+                </li>
+            )} */}
         </ul>
     );
 };

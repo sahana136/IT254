@@ -1,0 +1,66 @@
+.title {
+    text-align: center;
+    padding: 2%;
+    color: #192F59;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.upload_form {
+    margin-left: 35%;
+}
+
+.element {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: #192F59;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 90%;
+    padding: 7px;
+}
+
+.upload__label {
+    font-weight: 550;
+}
+
+input, select {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    float: right;
+    width: 40%;
+    margin-right: 35%;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#branch, #doctype {
+    width: 42%;
+}
+
+#document {
+    cursor: pointer;
+}
+
+.upload_btn {
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #192F59;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 2%;
+    margin-left: 20%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    cursor: pointer;
+}
+
+.upload_btn:hover {
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px 5px #aaaaaa;
+    border: 1px solid #BFBFBF;
+    color: #192F59;
+}
