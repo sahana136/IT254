@@ -6,7 +6,7 @@ const Upload = () => {
 
     return (
         <React.Fragment>
-            <form onSubmit="return validate()">
+            <form action="/up1">
                 <div className="title">
                     <h1>Upload</h1>
                 </div>

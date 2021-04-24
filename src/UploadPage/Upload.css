@@ -23,7 +23,7 @@
     font-weight: 550;
 }
 
-input, select {
+#nameofdoc, #branch, #doctype, #course, #document {
     padding-left: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 1rem;

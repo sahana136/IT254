@@ -15,8 +15,6 @@ import BranchWise from './MostSearchedItems/Pages/BranchWise';
 import About from './About/About';
 import Upload from './UploadPage/Upload';
 
-
-
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -49,6 +47,12 @@ const App = () => {
           <BranchWise />
           <MessagesBar />
         </Route>
+        <Route path="/up1">
+          <BranchesBar />
+          <Files />
+          <BranchesBar />
+        </Route>
+        <Redirect to="/" />
       </Switch>
     );
   } else {
@@ -73,6 +77,7 @@ const App = () => {
           <BranchWise />
           <MessagesBar />
         </Route>
+        <Redirect to="/auth" />
       </Switch>
     );
   }
