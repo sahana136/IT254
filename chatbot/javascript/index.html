@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>jQuery ChatBot</title>
+	<link rel="stylesheet" href="../css/main.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+	<div id="phone-wrapper">
+		<div id="app">
+			
+			<div id="header" class="bg-dark">
+				<div class="text-light align-center">
+					<h2>ChatBot</h2>
+				</div>
+				<div>
+				
+					<nav id="nav-container" style="display: none;">
+						<ul class="nav">
+							<li id="search" class="nav-link"><span class="fas fa-search"></span>Search</li>
+							<li id="clear-history" class="nav-link"><span class="fas fa-trash-alt"></span>Clear history</li>
+							<li id="theme" class="nav-link"><span class="fas fa-cogs"></span>Settings</li>
+							<hr>
+							<li id="sign-out" class="nav-link"><span class="fas fa-sign-out-alt"></span>Sign out</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div id="message-board">
+
+
+			</div>
+			<div id="form" class="bg-light">
+				<div id="message" placeholder="Type your message here" rows="1" contenteditable></div>
+				<div><button id="send" type="" class="btn-transparent btn-icon"><img src="../image/sendIcon.png"></button></div>
+			</div>
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../javascript/index.js"></script>
+</body>
+
+</html>
