@@ -1,8 +1,6 @@
 const express = require('express');
-const app = express();
-const path = require('path');
-
 const bodyParser = require('body-parser');
+const path = require('path');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -10,20 +8,12 @@ const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const methodOverride = require('method-override');
 
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/', function(req,res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.get('/auth', function(req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-})
-
+const app = express();
 
 // Middleware
 app.use(bodyParser.json());
 app.use(methodOverride('__method'));
+app.set('view engine', 'ejs');
 
 // Mongo URI
 const mongoURI = 'mongodb+srv://IT254_MiniProject_Team:nF8Zx9gqSdnL9JT@it254miniproject.vjv2o.mongodb.net/Upload?retryWrites=true&w=majority';
@@ -61,53 +51,52 @@ const upload = multer({ storage });
 
 // route: GET /
 // Desc: Loads form
-app.get('/', function(req,res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get('/', (req, res) => {
+    res.render('file');
 });
 
 // route: POST /upload
 // Desc: Uploads file to DB
-app.post('/upload', upload.fields('upload'), (req, res) => {
+app.post('/upload', upload.single('file'), (req, res) => {
     // res.json({file: req.file});
-    console.log('Done');
-    res.redirect('/about');
+    res.redirect('/');
 });
 
 // route: GET /files
 // Desc: Display all files in json
-app.get('/branch', (req, res) => {
-    gfs.files.find().toArray((err, file) => {
+app.get('/files', (req, res) => {
+    gfs.files.find().toArray((err, files) => {
         // check if files
-        if(!file || file.length === 0) {
+        if(!files || files.length === 0) {
             return res.status(404).json({
                 err: 'No files!'
             });
         }
 
         // if files exist
-        return res.json(file);
+        return res.json(files);
     });
 });
 
 // route: GET /files/:filename
 // Desc: single file
-// app.get('/branch/:branch', (req, res) => {
-//     gfs.uploads.find({ branch: req.params.branch }, (err, file) => {
-//         // check if file
-//         if(!file || file.length === 0) {
-//             return res.status(404).json({
-//                 err: 'No file!'
-//             });
-//         }
-//         // file exists
-//         return res.json(file);
-//     });
-// });
+app.get('/files/:filename', (req, res) => {
+    gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
+        // check if file
+        if(!file || file.length === 0) {
+            return res.status(404).json({
+                err: 'No file!'
+            });
+        }
+        // file exists
+        return res.json(file);
+    });
+});
 
 // route: GET /document/:filename
 // Desc: Display file
-app.get('/branch/:branchname', (req, res) => {
-    gfs.files.findOne({ filename: req.params.branchname }, (err, file) => {
+app.get('/document/:filename', (req, res) => {
+    gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
         // check if file
         if(!file || file.length === 0) {
             return res.status(404).json({
