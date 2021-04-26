@@ -72,7 +72,7 @@ const App = () => {
         <Route path="/upload" exact>
           <Upload />
         </Route>
-        <Route path="/branch/:branch" exact>
+        <Route path="/branch/:branchid" exact>
           <BranchesBar />
           <BranchWise />
           <MessagesBar />
